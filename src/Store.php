@@ -6,11 +6,11 @@ use Kylwes\Ignition\Settings\Page;
 class Store extends Plugin {
    
 
-    private static $suffix = '_ohm';
+    private static $suffix = '';
 
     private static $prefix = '';
 
-    private $modifiers = ['role'];
+    private $modifiers = [];
 
 
     public static function all($namespace, $modifier = [])

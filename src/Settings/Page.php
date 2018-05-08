@@ -33,7 +33,6 @@ class Page extends Plugin {
     {
         $this->add_action( 'admin_init', array( $this, 'save_options' ) );
         $this->add_action( 'admin_menu', array( $this, 'add_menu' ) );
-        $this->add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
 
     }
 
@@ -61,17 +60,6 @@ class Page extends Plugin {
         require("Pages/{$this->page_slug}/html.php");
     }
 
-    public function enqueue_scripts()
-    {
-        wp_enqueue_media();
-
-        wp_register_script('settings-js', plugins_url() . '/ohm/assets/js/settings_page.js', array('jquery'),'1.1', true);
-        wp_enqueue_script('settings-js');
-
-        wp_register_style('settings-css', plugins_url() . '/ohm/assets/css/settings_page.css');
-        wp_enqueue_style('settings-css');
-
-    }
 
 
     public function get_page_fields()
@@ -89,6 +77,7 @@ class Page extends Plugin {
         return $data;
 
     }
+    
     public static function format($namespace, $modifier)
     {
        return implode('', $modifier) . $namespace;

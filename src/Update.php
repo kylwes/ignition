@@ -117,7 +117,7 @@ class Update extends Plugin {
      
             $res->banners = array(
                 'low' => 'https://YOUR_WEBSITE/banner-772x250.jpg',
-                        'high' => 'https://YOUR_WEBSITE/banner-1544x500.jpg'
+                'high' => 'https://YOUR_WEBSITE/banner-1544x500.jpg'
             );
                    return $res;
      

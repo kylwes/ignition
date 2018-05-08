@@ -29,7 +29,7 @@ class Plugin  {
      * 
      * @since 1.0.0
      */
-    public static $admin = '@voltinternet.nl';
+    public static $admin;
 
 
     /**
@@ -43,7 +43,7 @@ class Plugin  {
      * 
      * @since 1.0.0
      */
-    private $version = '0.9.0';
+    private $version;
 
 
     /**
@@ -57,7 +57,7 @@ class Plugin  {
      * 
      * @since 1.0.0
      */
-    private $plugin_name = 'ohm';
+    private $plugin_name;
 
 
     /**
@@ -73,7 +73,7 @@ class Plugin  {
      * 
      * @deprecated No longer used by internal code and not recommended.
      */
-	private $update_path = 'https://plugins.voltinternet.nl/ohm/update';
+	private $update_path;
 
 
     /**
