@@ -22,7 +22,7 @@
                     "reference": "master"
                 },
                 "autoload": {
-                    "psr-0" : {
+                    "psr-4" : {
                         "Kylwes\\Ignition\\" : "src/"
                     }
                 }
