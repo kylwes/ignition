@@ -23,7 +23,7 @@
                 },
                 "autoload": {
                     "psr-4" : {
-                        "Kylwes\\Ignition\\" : "src/"
+                        "Kylwes\\Ignition\\" : "src"
                     }
                 }
             }
