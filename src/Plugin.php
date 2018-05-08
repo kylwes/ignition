@@ -75,7 +75,7 @@ class Plugin  {
      */
 	private $update_path;
 
-
+    private $update_file;
     /**
      * Filters
      * 
@@ -117,6 +117,7 @@ class Plugin  {
         // Make sure every class used is called
         $this->init_plugins();
 
+        add_action('init', 'check_for_plugin_updates');
         // Execute all $filters and $actions on 'init'
         add_action('init', function()
         {
@@ -127,6 +128,10 @@ class Plugin  {
                 add_action($action['hook'], $action['class'], $filter['priority'], $filter['args']);
             }
         });
+    }
+
+    public function check_for_plugin_updates() {
+        new Update($this->version, $this->update_path, plugin_basename(__FILE__));
     }
 
 
