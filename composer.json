@@ -15,6 +15,7 @@
             "package": {
                 "name": "kylwes/ignition",
                 "version": "dev-master",
+                "minimum-stability": "stable",
                 "source": {
                     "url": "git://github.com/kylwes/ignition.git",
                     "type": "git",
