@@ -15,7 +15,7 @@ use Kylwes\Ignition\Settings\Pages\ohm_settings\Settings;
    * @package    Ignition
    * @author     Kylwes
    */
-class Plugin  {
+class Plugin {
 
 
     /**
