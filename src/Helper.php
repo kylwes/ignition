@@ -3,13 +3,13 @@ namespace Kylwes\Ignition;
 
 
 class Helper extends Plugin {
-   
+
 
     public static function endsWith($haystack, $needle)
     {
         $length = strlen($needle);
-    
-        return $length === 0 || 
+
+        return $length === 0 ||
         (substr($haystack, -$length) === $needle);
     }
 
