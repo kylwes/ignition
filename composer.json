@@ -20,15 +20,15 @@
                     "url": "git://github.com/kylwes/ignition.git",
                     "type": "git",
                     "reference": "master"
-                },
-                "autoload": {
-                    "psr-4" : {
-                        "Kylwes\\Ignition\\" : "src"
-                    }
                 }
             }
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4" : {
+            "Kylwes\\Ignition\\" : "src/"
+        }
+    }
 }
 
 
