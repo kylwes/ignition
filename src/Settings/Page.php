@@ -31,11 +31,11 @@ class Page extends Plugin
 
     public function __construct()
     {
-        $this->add_action('admin_init', array( $this, 'save_options' ));
-        $this->add_action('admin_menu', array( $this, 'add_menu' ));
+        $this->add_action('admin_init', array( $this, 'saveOptions' ));
+        $this->add_action('admin_menu', array( $this, 'addMenu' ));
     }
 
-    public function save_options()
+    public function saveOptions()
     {
         $keys = [];
         if (isset($_POST[$this->page_slug])) {
@@ -48,7 +48,7 @@ class Page extends Plugin
         }
     }
 
-    public function add_menu()
+    public function addMenu()
     {
         add_options_page($this->page_slug, $this->page_name, $this->page_permission, sanitize_title($this->page_slug), array( $this, 'render' ));
     }
