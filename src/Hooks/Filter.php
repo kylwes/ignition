@@ -2,7 +2,7 @@
 
 namespace Kylwes\Ignition\Hooks;
 
-class Action
+class Filter
 {
 
     public $hook = 'init';

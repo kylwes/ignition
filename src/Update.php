@@ -36,11 +36,8 @@ class Update extends Plugin
      * @param string $update_path
      * @param string $plugin_slug
      */
-    public function __construct($current_version, $update_path, $plugin_slug)
+    function __construct($current_version, $update_path, $plugin_slug)
     {
-
-        // var_dump($current_version, $update_path, $plugin_slug);
-        // die();
         // Set the class public variables
         $this->current_version = $current_version;
         $this->update_path = $update_path;
@@ -149,11 +146,8 @@ class Update extends Plugin
             }
         }
 
-
-        if ($remote) {
+        if ($remote && is_array($remote)) {
             $remote = json_decode($remote['body']);
-
-            // var_dump($remote, version_compare($this->current_version, $remote->version, '<'), version_compare($remote->requires, get_bloginfo('version'), '<='));
 
             // your installed plugin version should be on the line below! You can obtain it dynamically of course
             if ($remote && version_compare($this->current_version, $remote->version, '<') && version_compare($remote->requires, get_bloginfo('version'), '<=')) {
