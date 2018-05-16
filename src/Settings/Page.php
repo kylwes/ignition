@@ -1,6 +1,7 @@
 <?php
 
 namespace Kylwes\Ignition\Settings;
+
 use Kylwes\Ignition\User;
 use Kylwes\Ignition\Store;
 use Kylwes\Ignition\Plugin;
@@ -15,9 +16,8 @@ use Kylwes\Ignition\Settings\Fields\Modifier;
 use Kylwes\Ignition\Settings\Fields\Textarea;
 use Kylwes\Ignition\Settings\Fields\Checkboxgroup;
 
-
-
-class Page extends Plugin {
+class Page extends Plugin
+{
 
     public $page_name;
 
@@ -31,17 +31,16 @@ class Page extends Plugin {
 
     public function __construct()
     {
-        $this->add_action( 'admin_init', array( $this, 'save_options' ) );
-        $this->add_action( 'admin_menu', array( $this, 'add_menu' ) );
-
+        $this->add_action('admin_init', array( $this, 'save_options' ));
+        $this->add_action('admin_menu', array( $this, 'add_menu' ), 20);
     }
 
     public function save_options()
     {
         $keys = [];
-        if( isset( $_POST[$this->page_slug] )) {
-            foreach($_POST as $key => $value) {
-               $keys[] = $key;
+        if (isset($_POST[$this->page_slug])) {
+            foreach ($_POST as $key => $value) {
+                $keys[] = $key;
             }
             Store::set_value(self::format($this->page_slug, $this->page_modifier), $keys);
 
@@ -51,13 +50,13 @@ class Page extends Plugin {
 
     public function add_menu()
     {
-        add_options_page( $this->page_slug, $this->page_name, $this->page_permission, sanitize_title( $this->page_slug ), array( $this, 'render_page' ) );
+        add_options_page($this->page_slug, $this->page_name, $this->page_permission, sanitize_title($this->page_slug), array( $this, 'render' ));
     }
 
-    public function render_page()
+    public function render()
     {
         global $submenu, $menu, $pagenow, $wp_roles;
-        require("Pages/{$this->page_slug}/html.php");
+        // Silence is golden
     }
 
 
@@ -71,16 +70,15 @@ class Page extends Plugin {
     {
         $fields = $this->get_page_fields();
         $data = [];
-        foreach($fields as $field) {
+        foreach ($fields as $field) {
             $data[] = Store::get_value(self::format($this->page_slug, $this->page_modifier) . '_' . $field, '');
         }
         return $data;
-
     }
-    
+
     public static function format($namespace, $modifier)
     {
-       return implode('', $modifier) . $namespace;
+        return implode('', $modifier) . $namespace;
     }
 
 
@@ -120,6 +118,4 @@ class Page extends Plugin {
     {
         return (new Checkboxgroup($name, $this->page_slug, $this->page_modifier, $val))->render();
     }
-
-
 }
