@@ -3,7 +3,12 @@
 Basic framework for expanding WordPress functionalities
 
 ## Table of Contents
-
+    [Getting Started](#getting-started)
+    [Prerequisites](#prerequisites)
+    [Installation](#installation)
+    [Usage](#usage)
+    [Authors](#authors)
+    [License](#license)
 
 
 ## Getting Started
@@ -18,7 +23,7 @@ Make sure you have composer installed and composer is configured
 composer init
 ```
 
-### Installing
+### Installation
 
 
 ```
