@@ -15,9 +15,4 @@ class Action
     {
         add_action($this->hook, array($this, 'action'), $this->priority, $this->arguments);
     }
-
-    public function action()
-    {
-        // Silence is golden
-    }
 }

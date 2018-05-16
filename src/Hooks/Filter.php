@@ -15,9 +15,4 @@ class Filter
     {
         add_filter($this->hook, array($this, 'filter'), $this->priority, $this->arguments);
     }
-
-    public function filter()
-    {
-        // Silence is golden
-    }
 }
