@@ -11,12 +11,8 @@ class User
     public static $roles = [];
 
 
-    public static $admin;
-
-    public function __construct($admin)
+    public function __construct()
     {
-        self::$admin = $admin;
-
         add_action('init', array($this, 'getUserInfo'));
     }
 
