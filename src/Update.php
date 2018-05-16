@@ -86,7 +86,7 @@ class Update extends Plugin
                 ) ));
 
             if (!is_wp_error($remote) && isset($remote['response']['code']) && $remote['response']['code'] == 200 && !empty($remote['body'])) {
-                set_transient('misha_upgrade_' . $this->slug, $remote, 43200); // 12 hours cache
+                set_transient('misha_upgrade_' . $this->slug, $remote, 600); // 12 hours cache
             }
         }
 
@@ -142,7 +142,7 @@ class Update extends Plugin
                 ) ));
 
             if (!is_wp_error($remote) && isset($remote['response']['code']) && $remote['response']['code'] == 200 && !empty($remote['body'])) {
-                set_transient('misha_upgrade_' . $this->slug, $remote, 43200); // 12 hours cache
+                set_transient('misha_upgrade_' . $this->slug, $remote, 600); // 12 hours cache
             }
         }
 
